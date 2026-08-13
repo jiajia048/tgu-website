@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Global brand palette ── */
+  --color-theme:        #a62323; /* 主题色  theme color        */
+  --color-highlight:    #D4AF37; /* 点缀色  highlight          */
+  --color-background:   #ffffff; /* 主背景色 background        */
+  --color-surface:      #F5F5F5; /* 次要背景 surface (浅灰)    */
+  --color-title:        #111111; /* 标题色  title              */
+  --color-body:         #2D2D2D; /* 正文色  body text          */
+  --color-text-inverse: #ffffff; /* 反转文字 (深色底上的白字)   */
+
+  /* ── Typography ── */
+  --font-sans: var(--font-inter), "Microsoft YaHei", "微软雅黑", sans-serif;
+  --font-serif: var(--font-playfair), "Noto Serif SC", "SimSun", serif;
+  --font-cn-heading: var(--font-noto-serif-sc), "SimSun", serif;
+  --font-cn-body: var(--font-noto-sans-sc), "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+/* ══════════════════════════════════════════
+    Mobile baseline (iOS Safari / Android Chrome / HarmonyOS)
+══════════════════════════════════════════ */
+
+@layer base {
+  html {
+    /* Stops iOS landscape and Android WebView from inflating body copy */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    /* A single overflowing decoration must never create a horizontal scrollbar */
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* iOS Safari zooms the whole page when a focused control is under 16px */
+  @media (max-width: 767px) {
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Bottom padding that clears the iPhone home indicator */
+.pb-safe {
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+}
+
+/* Horizontal padding that clears the notch in landscape */
+.px-safe {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 768px) {
+  .px-safe {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+}
