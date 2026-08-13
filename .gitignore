@@ -40,6 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large assets (stored on cloud storage instead)
-/public/images/
+# large assets not committed to git
 /public/videos/

@@ -1,11 +1,11 @@
 /**
  * Image URL helper.
  *
- * All site images live on Aliyun OSS (see NEXT_PUBLIC_OSS_BASE_URL in .env.local).
- * Pass a path that starts with "/images/..." and this returns the full public URL.
+ * Site images live in public/images/ and are served from the same origin
+ * (e.g. /images/contact_us.jpg). Keep this wrapper so call sites stay stable
+ * if the asset host changes later.
  *
- * If NEXT_PUBLIC_OSS_BASE_URL is unset (e.g. offline dev before OSS upload),
- * we fall back to the original relative path so local /public/images/ still works.
+ * Optional: set NEXT_PUBLIC_OSS_BASE_URL to prefix paths with an OSS CDN.
  */
 const OSS_BASE = process.env.NEXT_PUBLIC_OSS_BASE_URL ?? "";
 
