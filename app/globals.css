@@ -1,20 +1,32 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Global brand palette ── */
-  --color-theme:        #a62323; /* 主题色  theme color        */
-  --color-highlight:    #D4AF37; /* 点缀色  highlight          */
+  /* ── Brand palette — shared by both locales ── */
+  --color-theme:        #A62323; /* 主题色  brand red          */
+  --color-highlight:    #D4AF37; /* 点缀色  brand gold         */
   --color-background:   #ffffff; /* 主背景色 background        */
+  --color-text-inverse: #ffffff; /* 反转文字 (深色底上的白字)   */
+
+  /* ── Chinese text palette ── */
   --color-surface:      #F5F5F5; /* 次要背景 surface (浅灰)    */
   --color-title:        #111111; /* 标题色  title              */
   --color-body:         #2D2D2D; /* 正文色  body text          */
-  --color-text-inverse: #ffffff; /* 反转文字 (深色底上的白字)   */
+
+  /*
+    English text palette. Latin type at these sizes reads as harsh at #111111,
+    so the English side uses a warmer, more layered ramp: near-black headings,
+    dark warm grey body, mid warm grey for secondary copy.
+  */
+  --color-title-en:     #22211F;
+  --color-body-en:      #484642;
+  --color-muted-en:     #706C66;
+  --color-surface-en:   #F7F6F3;
+  --color-inverse-en:   #FAF9F6; /* off-white for text over photography */
+  --color-hairline-en:  #E7E3DC; /* panel borders and column separators */
 
   /* ── Typography ── */
   --font-sans: var(--font-inter), "Microsoft YaHei", "微软雅黑", sans-serif;
   --font-serif: var(--font-playfair), "Noto Serif SC", "SimSun", serif;
-  --font-cn-heading: var(--font-noto-serif-sc), "SimSun", serif;
-  --font-cn-body: var(--font-noto-sans-sc), "Microsoft YaHei", "微软雅黑", sans-serif;
 }
 
 /* ══════════════════════════════════════════

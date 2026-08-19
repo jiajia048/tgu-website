@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -23,6 +24,7 @@ const DEPT_ICONS = [Briefcase, Headphones, Newspaper] as const;
 
 export default function ContactPage() {
   const { t, locale } = useLanguage();
+  const typo = useTypography();
 
   const departments = [
     t.contact.b2b.departments.item1,
@@ -61,7 +63,10 @@ export default function ContactPage() {
       {/* ════════════════════════════════════════
           Banner
       ════════════════════════════════════════ */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(220px, 36vw, 480px)" }}>
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: typo.heroHeight }}
+      >
         <Image
           src={img("/images/contact_us.jpg")}
           alt={t.contact.bannerTitle}
@@ -70,13 +75,13 @@ export default function ContactPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={`absolute inset-0 ${typo.heroOverlay}`} />
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-16 md:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="font-serif text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl"
+            className={`mx-auto px-6 text-center ${typo.heroTitleColor} ${typo.heroTitle} ${typo.measureHeroHeading}`}
           >
             {t.contact.bannerTitle}
           </motion.p>
@@ -84,7 +89,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
-            className="mt-3 max-w-2xl px-6 text-center text-sm leading-relaxed tracking-wide text-white/80 md:mt-4 md:text-base"
+            className={`mx-auto mt-3 max-w-2xl px-6 text-center md:mt-4 ${typo.heroLedeColor} ${typo.heroLede}`}
           >
             {t.contact.bannerDesc}
           </motion.p>
@@ -94,7 +99,7 @@ export default function ContactPage() {
       {/* ════════════════════════════════════════
           Section 1 — B2B Collaborations
       ════════════════════════════════════════ */}
-      <section className="pt-16 pb-16 md:pt-24 md:pb-24 bg-[var(--color-surface)]">
+      <section className={`pt-16 pb-16 md:pt-24 md:pb-24 ${typo.surfaceBg}`}>
         {/* Title & intro */}
         <div className="mx-auto max-w-3xl px-6 md:px-8 text-center mb-12 md:mb-20">
           <motion.h1
@@ -102,7 +107,7 @@ export default function ContactPage() {
             animate="visible"
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="font-serif text-2xl font-bold leading-snug tracking-tight text-[var(--color-title)] md:text-3xl lg:text-4xl"
+            className={`${typo.titleColor} ${typo.sectionTitle}`}
           >
             {t.contact.b2b.titleLead}
             <span className="text-[var(--color-theme)]">
@@ -146,7 +151,9 @@ export default function ContactPage() {
                     />
                   </span>
                   <span className="flex flex-col min-w-0 flex-1">
-                    <span className="text-sm font-semibold text-[var(--color-title)] truncate">
+                    <span
+                      className={`truncate text-sm font-semibold ${typo.titleColor}`}
+                    >
                       {dept.name}
                     </span>
                     <span className="text-xs md:text-sm text-[var(--color-body)]/80 group-hover:text-[var(--color-theme)] transition-colors duration-200 truncate">
@@ -190,7 +197,7 @@ export default function ContactPage() {
             viewport={{ once: true, margin: "-60px" }}
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="font-serif text-2xl font-bold leading-snug tracking-tight text-[var(--color-title)] md:text-3xl lg:text-4xl"
+            className={`${typo.titleColor} ${typo.sectionTitle}`}
           >
             {t.contact.connect.titleLead}
             <span className="text-[var(--color-theme)]">
@@ -203,7 +210,7 @@ export default function ContactPage() {
             viewport={{ once: true, margin: "-60px" }}
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-            className="mt-5 md:mt-6 text-sm md:text-base leading-relaxed tracking-wide text-[var(--color-body)]"
+            className={`mx-auto mt-5 md:mt-6 md:text-base ${typo.bodyColor} ${typo.bodySm} ${typo.measure}`}
           >
             {t.contact.connect.desc}
           </motion.p>
@@ -232,7 +239,7 @@ export default function ContactPage() {
           {/* Right — Form */}
           <form
             onSubmit={handleEmailSubmit}
-            className="flex flex-col gap-4 md:gap-5 rounded-2xl bg-[var(--color-surface)] p-6 md:p-10"
+            className={`flex flex-col gap-4 md:gap-5 rounded-2xl p-6 md:p-10 ${typo.surfaceBg}`}
           >
             <input
               type="text"
@@ -268,13 +275,12 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="
+              className={`
                 group mt-2 flex items-center gap-2 self-start
-                py-2 text-base font-semibold tracking-wide
-                text-[var(--color-title)]
+                py-2 text-base font-semibold ${typo.uiLabel} ${typo.titleColor}
                 transition-colors duration-200
                 hover:text-[var(--color-theme)]
-              "
+              `}
             >
               <span>{t.contact.connect.form.submit}</span>
               <ArrowRight
@@ -297,6 +303,8 @@ function InfoRow({
   icon: typeof MapPin;
   text: string;
 }) {
+  const typo = useTypography();
+
   return (
     <div className="flex items-start gap-4">
       <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-theme)]">
@@ -305,7 +313,9 @@ function InfoRow({
           strokeWidth={1.8}
         />
       </span>
-      <p className="pt-2 text-base leading-relaxed tracking-wide text-[var(--color-body)]">
+      <p
+        className={`pt-2 text-base leading-relaxed ${typo.bodyColor} ${typo.uiLabel}`}
+      >
         {text}
       </p>
     </div>

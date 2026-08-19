@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 
 /** Award certificate images, in display order (matches t.awards.items). */
 const AWARD_IMAGES = [
@@ -26,6 +27,7 @@ function fillUntil<T>(arr: T[], min: number): T[] {
 
 export default function AwardsMarquee() {
   const { t } = useLanguage();
+  const typo = useTypography();
   const [paused, setPaused] = useState(false);
 
   const items = fillUntil(
@@ -44,7 +46,9 @@ export default function AwardsMarquee() {
       `}</style>
 
       <div className="mx-auto max-w-6xl px-6 md:px-8">
-        <h2 className="text-center font-serif text-2xl font-bold leading-snug tracking-tight text-[var(--color-title)] md:text-3xl lg:text-4xl">
+        <h2
+          className={`mx-auto text-center ${typo.titleColor} ${typo.sectionTitle} ${typo.measureHeading}`}
+        >
           {t.awards.bannerTitle}
         </h2>
       </div>
@@ -77,7 +81,9 @@ export default function AwardsMarquee() {
                   className="object-contain"
                 />
               </div>
-              <p className="mt-4 text-center text-xs leading-snug tracking-wide text-[var(--color-body)] line-clamp-2 md:text-sm">
+              <p
+                className={`mt-4 line-clamp-2 text-center leading-snug md:text-sm ${typo.bodyColor} ${typo.caption}`}
+              >
                 {t.awards.items[i].title}
               </p>
             </div>

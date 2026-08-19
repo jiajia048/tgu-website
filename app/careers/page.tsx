@@ -6,6 +6,7 @@ import { Award, Globe2, HeartHandshake, Upload } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -16,6 +17,7 @@ const CULTURE_ICONS = [Award, Globe2, HeartHandshake] as const;
 
 export default function CareersPage() {
   const { t, locale } = useLanguage();
+  const typo = useTypography();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState("");
 
@@ -40,7 +42,7 @@ export default function CareersPage() {
     const attachmentNote =
       locale === "zh"
         ? "简历附件：请在邮件客户端中手动添加 PDF 简历"
-        : "CV attachment: Please attach your PDF CV in the email client";
+        : "Resume attachment: please attach your PDF resume in the email client";
     const body = [
       source,
       "",
@@ -62,7 +64,10 @@ export default function CareersPage() {
       {/* ════════════════════════════════════════
           Banner
       ════════════════════════════════════════ */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(220px, 36vw, 480px)" }}>
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: typo.heroHeight }}
+      >
         <Image
           src={img("/images/contact_us.jpg")}
           alt={t.careers.bannerTitle}
@@ -71,13 +76,13 @@ export default function CareersPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={`absolute inset-0 ${typo.heroOverlay}`} />
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-16 md:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="font-serif text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl"
+            className={`mx-auto px-6 text-center ${typo.heroTitleColor} ${typo.heroTitle} ${typo.measureHeroHeading}`}
           >
             {t.careers.bannerTitle}
           </motion.p>
@@ -85,7 +90,7 @@ export default function CareersPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
-            className="mt-3 max-w-2xl px-6 text-center text-sm leading-relaxed tracking-wide text-white/80 md:mt-4 md:text-base"
+            className={`mx-auto mt-3 max-w-2xl px-6 text-center md:mt-4 ${typo.heroLedeColor} ${typo.heroLede}`}
           >
             {t.careers.bannerDesc}
           </motion.p>
@@ -116,16 +121,18 @@ export default function CareersPage() {
                     ease: "easeOut",
                     delay: i * 0.12,
                   }}
-                  className="rounded-2xl bg-[var(--color-surface)] p-6 md:p-10"
+                  className={`rounded-2xl p-6 md:p-10 ${typo.surfaceBg}`}
                 >
                   <Icon
                     className="w-10 h-10 text-[var(--color-highlight)]"
                     strokeWidth={1.4}
                   />
-                  <h3 className="mt-5 text-lg font-bold text-[var(--color-theme)]">
+                  <h3 className={`mt-5 text-lg font-bold text-[var(--color-theme)] ${
+                    locale === "en" ? "tracking-[-0.015em]" : ""
+                  }`}>
                     {card.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed tracking-wide text-[var(--color-body)]">
+                  <p className={`mt-3 ${typo.bodyColor} ${typo.bodySm}`}>
                     {card.desc}
                   </p>
                 </motion.div>
@@ -138,7 +145,7 @@ export default function CareersPage() {
       {/* ════════════════════════════════════════
           Section 3 — Application (Image + Form)
       ════════════════════════════════════════ */}
-      <section className="py-20 md:py-32 bg-[var(--color-surface)]">
+      <section className={`py-20 md:py-32 ${typo.surfaceBg}`}>
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <motion.div
             initial="hidden"
@@ -229,7 +236,9 @@ export default function CareersPage() {
                     {fileName || t.careers.form.cv}
                   </span>
                 </button>
-                <p className="mt-2 text-xs tracking-wide text-[var(--color-body)]/50">
+                <p
+                  className={`mt-2 leading-relaxed text-[var(--color-body)]/50 ${typo.caption}`}
+                >
                   {t.careers.form.cvHint}
                 </p>
               </div>

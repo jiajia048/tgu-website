@@ -5,7 +5,7 @@
     "business": "Our Business",
     "gallery": "Case Studies",
     "awards": "Awards",
-    "news": "Media",
+    "news": "News",
     "contact": "Contact Us",
     "careers": "Careers",
     "menu": "Open menu",
@@ -21,149 +21,160 @@
       "title": "Extraordinary Taste for Every Journey"
     },
     "slogan": {
-      "text": "Extraordinary Taste for Every Journey."
+      "text": "Extraordinary Taste for Every Journey"
+    },
+    "intro": {
+      "label": "Who we are",
+      "title": "Airport dining, built around how people travel",
+      "body": "TGU operates restaurants, cafés and lounges in airports and travel hubs across China. Instead of a single house brand, we build a portfolio matched to each terminal's travelers and traffic, then run it with teams who know how airports work. That gives travelers genuinely better choices, and gives airports and brand partners an operation that performs."
     },
     "stats": {
       "item1": {
         "number": "3M+",
-        "desc": "ANNUAL PASSENGERS SERVED (2025)"
+        "desc": "Travelers served annually"
       },
       "item2": {
         "number": "50+",
-        "desc": "LOCATIONS & LOUNGES IN MAJOR AIRPORTS"
+        "desc": "Locations and lounges"
       },
       "item3": {
         "number": "70+",
-        "desc": "WELL-KNOWN BRAND PARTNERS"
+        "desc": "Brand partners"
       }
     },
     "marquee": {
-      "title": "Our Market Leading Portfolio"
+      "title": "Our brand portfolio"
     },
     "cases": {
-      "title": "Featured Cases"
+      "title": "Featured case studies"
     }
   },
   "about": {
     "company": {
-      "title": "Who We Are",
-      "bannerTitle": "TOUR GOURMET UNITED",
-      "subtitle": "Asia's Leading Comprehensive Travel Catering Operator",
-      "body": "TOUR GOURMET UNITED, (\"TGU\") focuses on high-quality catering operations in airports and travel hubs. Founded in 2018 by senior industry expert Mr. Li Yang, the company is backed by the global evergreen capital Invus. Adhering to the core values of \"Professionalism, Quality, Innovation, and Win-win\", TGU has rapidly grown into a leader in the travel catering sector within just seven years. Through a powerful brand matrix and deep understanding of specific scenarios, TGU has successfully resolved the operational bottlenecks of traditional brands in the airport format, providing travelers with richer, more convenient, and higher-quality dining choices. To date, TGU has not only successfully introduced the first Michelin two-star restaurant brand to domestic airports but also gathered nearly 100 diversified, international, and Michelin-recognized catering brands, significantly raising the standard of the airport dining experience and repeatedly earning high recognition and awards from airport operators.",
+      "title": "Who we are",
+      "bannerTitle": "About Us",
+      "subtitle": "A leading travel food & beverage operator in Asia",
+      "heading": "A different model for airport dining",
+      "body": [
+        "TGU operates restaurants, cafés and lounges in airports and travel hubs across China. Li Yang, a veteran of the travel food and beverage industry, founded the company in 2018, and it is backed by Invus, a global evergreen investment firm.",
+        "Terminals are difficult places to run a restaurant: kitchens are small, service windows are short, and passenger flows shift by the hour. TGU was built for those conditions. We curate a brand portfolio for each terminal, adapt every concept to the way it will actually be used, and hold the same operating standards across all of our sites.",
+        "In seven years we have brought the first Michelin two-star restaurant brand into a Chinese airport and assembled a roster of close to 100 Chinese and international brands, many of them Michelin-recognized. Airport operators have recognized that work with repeated awards."
+      ],
       "stats": [
-        { "number": "3 million+", "desc": "Annual Passengers" },
-        { "number": "50+", "desc": "Hub Stores" },
-        { "number": "70+", "desc": "Renowned Brands" }
+        { "number": "3 million+", "desc": "Travelers served annually" },
+        { "number": "50+", "desc": "Locations and lounges" },
+        { "number": "70+", "desc": "Brand partners" }
       ]
     },
     "timeline": {
-      "title": "Our Journey",
+      "title": "Our history",
       "items": [
-        { "year": "2018", "desc": "Mr. Li Yang founded TGU with the ambition to build an Asia-leading travel catering enterprise rooted in China." },
-        { "year": "2019", "desc": "The first batch of stores opened at Shanghai Pudong Airport and achieved rapid success." },
-        { "year": "2021", "desc": "Consolidated operational foundations during the pandemic, entering multiple new airports with restaurant and lounge formats." },
-        { "year": "2023", "desc": "The first international terminal restaurant opened at Pudong Airport, immediately ranking among the top in performance." },
-        { "year": "2024", "desc": "Beijing Capital Airport international terminal stores became industry benchmarks." },
-        { "year": "2025", "desc": "High-quality travel catering concepts entered second-tier hubs such as Guiyang, Wuxi, and Hangzhou." }
+        { "year": "2018", "desc": "Li Yang founded TGU to build an Asian travel dining company rooted in China." },
+        { "year": "2019", "desc": "The first locations opened at Shanghai Pudong Airport and performed strongly from the start." },
+        { "year": "2021", "desc": "Strengthened operations through the pandemic and entered several new airports with restaurants and lounges." },
+        { "year": "2023", "desc": "The first international-terminal restaurant opened at Pudong and ranked among the airport's top performers." },
+        { "year": "2024", "desc": "Locations in Beijing Capital's international terminal became benchmarks in their categories." },
+        { "year": "2025", "desc": "Expanded into second-tier hubs including Guiyang, Wuxi and Hangzhou." }
       ]
     },
     "leadership": {
-      "title": "Leadership Team",
-      "subtitle": "Professional Leadership with International Experience",
-      "intro": "TGU's leadership team brings together senior professionals from aviation, airport commerce and premium hospitality. Combining international management experience with strong execution in China, the team integrates strategy, business development and operations to establish dining brands successfully in complex travel hub environments.",
+      "title": "Leadership team",
+      "subtitle": "An international team with airport operating experience",
+      "intro": "TGU's senior team comes from aviation, airport retail and premium hospitality. They combine international management experience with the ability to execute in the Chinese market, working across strategy, commercial development and operations to get dining brands open and running well inside complex travel hubs.",
       "points": [
         {
-          "title": "In-Depth Understanding of Aviation",
-          "body": "Senior team members have held management roles at the International Air Transport Association (IATA), Air China and UPS, providing practical knowledge of aviation services, passenger needs and travel hub operations."
+          "title": "Deep aviation expertise",
+          "body": "Senior members of the team have held management roles at the International Air Transport Association (IATA), Air China and UPS. That background shapes how we read passenger needs, service standards and the daily realities of a travel hub."
         },
         {
-          "title": "Proven Business Development Capability",
-          "body": "The team brings business development experience from international travel dining operators including SSP and HMSHost. It has led major airport tenders and brand acquisitions, translating terminal traffic and passenger needs into commercially sound brand portfolios."
+          "title": "Proven commercial expertise",
+          "body": "Team members have worked in business development at international travel dining operators including SSP and HMSHost. They have led major airport tenders and brought new brands into terminals, turning traffic patterns and passenger profiles into brand portfolios that make commercial sense."
         },
         {
-          "title": "Established Operating Expertise",
-          "body": "The team has managed close to 20 chain brands and more than 40 multi-format outlets across Shanghai and Beijing, while also supporting the planning and daily catering operations of several airline lounges."
+          "title": "Operational expertise at scale",
+          "body": "The team has run close to 20 chain brands and more than 40 outlets across multiple formats in Shanghai and Beijing, and has supported the planning and daily food and beverage operations of several airline lounges."
         }
       ]
     },
     "investor": {
-      "title": "Our Investor",
-      "subtitle": "Backed by a World-Class Evergreen Fund",
-      "body": "TGU's strategic investor, Invus, is a global evergreen capital firm focused on long-term value investing since 1985. Invus manages over $10 billion in assets, with teams across the United States, Europe, and Asia. Deeply rooted in the consumer, technology, and healthcare sectors for over 40 years, it has built an outstanding investment track record and industry reputation, particularly in the catering and consumer food sectors. As a long-term shareholder of TGU, Invus brings patient capital, profound industry experience, and a global network of brand and operational resources to the company.",
-      "statsNote": "Aggregate across portfolio companies",
+      "title": "Our investor",
+      "subtitle": "Backed by a global evergreen investor",
+      "body": "TGU's strategic investor is Invus, a global evergreen investment firm that has focused on long-term value since 1985. Invus manages more than $10 billion in assets and has teams in the United States, Europe and Asia. It has invested in consumer, technology and healthcare businesses for more than forty years, with a particular track record in food and consumer brands. As a long-term shareholder, Invus gives TGU patient capital, sector experience and access to a global network of brand and operating relationships.",
+      "statsNote": "Combined across Invus portfolio companies",
       "stats": [
-        { "number": "$3B+", "desc": "Global Annual Revenue" },
-        { "number": "80M+", "desc": "Customers Served Annually" },
-        { "number": "3000+", "desc": "Locations Managed Worldwide" },
-        { "number": "4M+", "desc": "Total Sqm Operated" }
+        { "number": "$3B+", "desc": "Annual revenue worldwide" },
+        { "number": "80M+", "desc": "Customers served annually" },
+        { "number": "3000+", "desc": "Locations worldwide" },
+        { "number": "4M+", "desc": "Square meters operated" }
       ]
     }
   },
   "careers": {
     "bannerTitle": "Join Us",
-    "bannerDesc": "An extraordinary journey awaits. At TGU, we believe that 'Extraordinary Taste' is not only a commitment to our travellers, it is also the standard we hold for our work and our people.",
+    "bannerDesc": "The standards we set for travelers are the standards we set for ourselves. If you want to build and run airport dining alongside people who take the work seriously, we would like to hear from you.",
     "hero": {
       "title": "Join Us",
-      "desc": "Extraordinary journey, looking forward to your company. At TGU, we believe that \"Extraordinary Taste\" is not only a commitment to passengers but also our standard for work and talent."
+      "desc": "The standards we set for travelers are the standards we set for ourselves. If you want to build and run airport dining alongside people who take the work seriously, we would like to hear from you."
     },
     "culture": {
       "item1": {
-        "title": "Professionalism & Excellence",
-        "desc": "We are committed to redefining travel dining standards, refining every detail with extreme professionalism."
+        "title": "Excellence in the details",
+        "desc": "We are changing what travelers expect from airport dining. That comes down to detail: how food is sourced, how quickly it reaches the table, and how consistent it is from one shift to the next."
       },
       "item2": {
-        "title": "Global Perspective & Diversity",
-        "desc": "With a pure international DNA, TGU respects and embraces outstanding talents from diverse cultural backgrounds."
+        "title": "An international team",
+        "desc": "TGU is international by design. Our people come from different countries and backgrounds, and that range is part of how we run a business built around travelers from everywhere."
       },
       "item3": {
-        "title": "People-Oriented & Transparent Collaboration",
-        "desc": "We know talent is our most valuable asset, advocating flat and transparent communication to help individuals and teams grow together."
+        "title": "Open and collaborative",
+        "desc": "We keep the organization flat and communication direct, so good ideas move quickly and people can see the effect of their work. Careers here grow with the business."
       }
     },
     "form": {
       "lastName": "Last Name",
       "firstName": "First Name",
-      "phone": "Phone Number",
-      "email": "Email Address",
-      "cv": "Upload CV",
-      "cvHint": "PDF format only. Please attach your CV manually after the email client opens.",
+      "phone": "Phone",
+      "email": "Email",
+      "cv": "Upload Resume",
+      "cvHint": "PDF only. Attach the file in your email client after it opens.",
       "cvButton": "Choose File",
       "message": "Message (Optional)",
-      "submit": "Send Application"
+      "submit": "Submit application"
     }
   },
   "business": {
+    "bannerTitle": "Our Business",
     "hero": {
-      "title": "A multi-brand dining operator for China's airports."
+      "title": "A multi-brand dining operator for China's airports"
     },
     "overview": {
       "title": "What we do",
-      "bannerDesc": "TGU replaces the one-size-fits-all airport dining model with a curated multi-brand portfolio, giving travellers a genuinely rich and authentic dining experience.",
-      "body": "TGU focuses on food and beverage operations at airports and travel hubs. Unlike the passive site selection and homogeneous brands that characterise traditional airport dining, TGU builds its model around a curated multi-brand portfolio, tailoring the brand mix to the passenger profile and traffic structure of each terminal. Backed by proven operational capability in the airport environment, we deliver consistently high-quality execution. This integrated approach, from curation and composition through to operations, creates shared value for travellers, brands and airports within the same space.",
+      "bannerDesc": "We replace one-size-fits-all airport dining with a portfolio built terminal by terminal, so travelers get genuine choice on every trip.",
+      "body": "TGU runs food and beverage operations in airports and travel hubs. Traditional airport dining tends to work the other way around: sites are taken as they come, and the same handful of brands turns up in every terminal. We start from the terminal instead. We look at who travels through it and when, build a brand mix to match, and then operate those sites ourselves. Curating, composing and operating as one process is what makes the model work for travelers, brand partners and airports at the same time.",
       "winwin": [
-        { "title": "For travellers", "desc": "A richer and more authentic choice of dining on every journey." },
-        { "title": "For brands", "desc": "A professional route into the airport environment, from site to operation." },
-        { "title": "For airports", "desc": "Stronger commercial performance and higher dining quality in every space we operate." }
+        { "title": "For travelers", "desc": "More choice and more authentic food on every trip." },
+        { "title": "For brands", "desc": "A way into the airport market, from securing the site to running it." },
+        { "title": "For airports", "desc": "Higher sales per square meter and better dining quality in the same space." }
       ]
     },
     "brands": {
       "title": "Partner brands",
-      "subtitle": "A curated library of 70+ brands, tailored to each terminal",
+      "subtitle": "More than 70 brands, combined to fit each terminal",
       "navLabel": "Partner brands"
     },
     "airports": {
-      "title": "Signature airports",
-      "subtitle": "Deep partnerships at China's core hub airports",
-      "body": "TGU operates at a number of China's core hub airports. The four below are representative partnerships rather than the full operating network.",
-      "badge": "Representative case",
-      "labels": { "terminal": "Terminals", "brand": "Signature brands" },
+      "title": "Airport partners",
+      "subtitle": "Long-term partnerships at China's major hubs",
+      "body": "TGU operates in a number of China's major hub airports. The four below are representative; they are not the full network.",
+      "badge": "Featured",
+      "labels": { "terminal": "Terminals", "brand": "Selected brands" },
       "items": [
         {
           "code": "PVG",
           "name": "Shanghai Pudong International Airport",
           "subname": "",
           "image": "/images/business/shanghai.jpg",
-          "desc": "Home to TGU's first outlets. The international terminal flagship ranks among the airport's top performers.",
+          "desc": "Where TGU opened its first locations. The flagship in the international terminal is among the airport's top performers.",
           "terminal": "T1, T2",
           "brand": "Canton 8, EGG BOMB, Tonchin, Carl's Jr."
         },
@@ -172,7 +183,7 @@
           "name": "Beijing Capital International Airport",
           "subname": "",
           "image": "/images/business/shoudu.jpg",
-          "desc": "International terminal outlets lead their categories and serve both domestic and overseas travellers.",
+          "desc": "Our international-terminal locations lead their categories, serving both domestic and international travelers.",
           "terminal": "T2, T3",
           "brand": "Shunde Xiaoguan, Goose Island, Xi Shao Ye, Sumianfang"
         },
@@ -181,8 +192,8 @@
           "name": "Beijing Daxing International Airport",
           "subname": "",
           "image": "/images/business/daxing.jpg",
-          "desc": "A presence across both the domestic and international concourses of China's newest international gateway.",
-          "terminal": "Domestic, International",
+          "desc": "Locations in both the domestic and international concourses of China's newest international gateway.",
+          "terminal": "Domestic, international",
           "brand": "Canton 8, EGG BOMB, Wong Shifu, Jing-A, Mr. Yeti"
         },
         {
@@ -190,15 +201,15 @@
           "name": "Hangzhou Xiaoshan International Airport",
           "subname": "",
           "image": "/images/business/hangzhou.jpg",
-          "desc": "A core hub in the Yangtze River Delta, served by a mix of premium Chinese dining and dessert concepts.",
+          "desc": "A major hub in the Yangtze River Delta, served by a mix of premium Chinese dining and dessert concepts.",
           "terminal": "T4",
           "brand": "Canton 8, Luneurs"
         }
       ],
       "comingSoon": {
-        "label": "In preparation",
+        "label": "In development",
         "title": "More airports opening soon",
-        "note": "Our network continues to expand. Opening dates are confirmed through official announcements.",
+        "note": "The network continues to expand. Opening dates are confirmed through official announcements.",
         "items": [
           { "code": "CSX", "name": "Changsha Huanghua International Airport" },
           { "code": "HKG", "name": "Hong Kong International Airport" }
@@ -206,15 +217,15 @@
       }
     },
     "portfolio": {
-      "titlePart1": "Catering to Global Palates with a Diverse Portfolio of ",
+      "titlePart1": "A portfolio that brings together ",
       "titleH1": "Chinese",
       "titlePart2": ", ",
       "titleH2": "Asian",
-      "titlePart3": ", and ",
+      "titlePart3": " and ",
       "titleH3": "Western",
-      "titlePart4": " Culinary Experiences.",
-      "desc": "We understand that every traveler has a unique journey and distinct culinary preferences. To cater to the evolving profiles of global passengers, TGU has meticulously curated a comprehensive portfolio of over 70 renowned F&B brands. From Michelin-starred premium Chinese dining and comforting authentic Asian selections, to casual Western restaurants, quick-service concepts, and trending desserts, our all-day, multi-category offerings are designed to satisfy every craving. We are dedicated to providing tailor-made dining choices that transform airport dwell time into a delightful culinary exploration for travelers from all cultural backgrounds.",
-      "matrixPlaceholder": "Brand Matrix Logos (to be added)",
+      "titlePart4": " dining for travelers from everywhere.",
+      "desc": "Every traveler moves at a different pace and wants something different to eat. To cover that range, TGU has assembled a library of more than 70 food and beverage brands: Michelin-starred Chinese dining, authentic Asian cooking, casual Western restaurants, quick-service formats and dessert concepts. The mix runs all day and across categories, so time in the terminal becomes something better than waiting.",
+      "matrixPlaceholder": "Brand logos (to be added)",
       "filter": {
         "all": "All",
         "main": {
@@ -244,20 +255,20 @@
     }
   },
   "gallery": {
-    "layoutLabel": "Airports",
+    "layoutLabel": "Locations",
     "readMore": "Read more",
     "hero": {
-      "title": "Our Stores & Brands",
-      "desc": "Step into the thoughtfully crafted spaces where TGU elevates every journey. Each store embodies a distinctive brand story and delivers memorable taste and atmosphere for travelers."
+      "title": "Our Brands Gallery",
+      "desc": "A closer look at the spaces we build and the brands we run. Each store has its own character, and each one is designed for the way people actually use a terminal."
     },
     "brands": {
       "eggbomb": {
         "name": "EGG BOMB",
-        "slogan": "Global Inspiration with Chinese Flavors",
-        "tags": ["Trendy Hot Meals", "Fast Serving"],
-        "taglineMain": "The pioneer of freshly made hot sandwiches",
-        "taglineSub": "The king of airport dining efficiency.",
-        "intro": "Rooted in the philosophy of 'Global Inspiration with Chinese Flavors', EGG BOMB pioneered the freshly made hot sandwich category in airport terminals. We blend authentic Asian tastes with trending global elements, crafting every order on the spot to deliver consistent flavour while minimising wait times, a format suited to the tight schedules of travellers. With a distinctive brand identity, strong visual presence, and proven operational efficiency, EGG BOMB has quickly become one of the highest-performing F&B concepts by revenue per square meter in major airport terminals.",
+        "slogan": "Global ideas, Chinese flavors",
+        "tags": ["Hot food", "Fast service"],
+        "taglineMain": "The terminal's first made-to-order hot sandwich",
+        "taglineSub": "Portable, quick, and one of our strongest performers per square meter",
+        "intro": "EGG BOMB works from a simple idea: global formats, Chinese flavors. It created the made-to-order hot sandwich category inside airport terminals, combining Asian tastes with international trends. Everything is built when it is ordered, which keeps the flavor consistent while cutting the wait down to something that fits a boarding schedule. A distinctive look and a tight operating model have made it one of the strongest performers per square meter in the terminals where it operates.",
         "locations": [
           "Shanghai Pudong Int'l Airport (S2 / T1)",
           "Beijing Daxing Int'l Airport (Concourse A)",
@@ -267,10 +278,10 @@
       "canton8": {
         "name": "Canton 8",
         "slogan": "Michelin Cantonese, made for travel",
-        "tags": ["Michelin Cantonese", "Fine Dining"],
+        "tags": ["Michelin Cantonese", "Fine dining"],
         "taglineMain": "Michelin-starred Cantonese, now in the terminal",
-        "taglineSub": "Classic Cantonese flavours for an unhurried journey",
-        "intro": "Canton 8 brings Michelin-starred Cantonese cuisine into the airport, with refined ingredients, authentic craftsmanship and an elegant setting. From classic roast meats to seasonal seafood, every dish upholds the brand's signature standards, redefining what a proper sit-down meal at the terminal can be.",
+        "taglineSub": "Classic Cantonese cooking, without the rush",
+        "intro": "Canton 8 brings Michelin-starred Cantonese cooking into the terminal: careful sourcing, traditional technique and a room that does not feel like an airport. From classic roast meats to seasonal seafood, the kitchen holds the standards the brand is known for, which changes what a sit-down meal before a flight can be.",
         "locations": [
           "Shanghai Pudong Int'l Airport (S2 Satellite)",
           "Beijing Daxing Int'l Airport (Int'l Concourse)",
@@ -280,10 +291,10 @@
       "googse": {
         "name": "Goose Island",
         "slogan": "Craft beer, born in Chicago",
-        "tags": ["Craft Beer", "Pub"],
+        "tags": ["Craft beer", "Pub"],
         "taglineMain": "Chicago craft beer, right at the gate",
         "taglineSub": "A relaxed pour before you fly",
-        "intro": "Born in Chicago, Goose Island is a globally celebrated craft beer brand. We bring authentic craft culture and a laid-back pub atmosphere into the terminal, pouring a rotating selection of signature and limited brews alongside elevated American-style bites, an easy way to slow down and unwind before a flight.",
+        "intro": "Goose Island started in Chicago and is now one of the better-known craft breweries in the world. In the terminal it keeps the same unfussy pub feel, with a rotating list of core and limited releases alongside American bar food — a straightforward way to slow down before a flight.",
         "locations": [
           "Beijing Capital Int'l Airport (T3)",
           "Shanghai Pudong Int'l Airport (T1)"
@@ -292,21 +303,21 @@
       "segafredo": {
         "name": "Segafredo Caffe",
         "slogan": "Specialty coffee from Italy",
-        "tags": ["Italian Coffee", "Specialty Coffee"],
+        "tags": ["Italian coffee", "Specialty coffee"],
         "taglineMain": "Italian specialty coffee in the terminal",
-        "taglineSub": "Professional quality, served efficiently",
-        "intro": "Segafredo Caffe brings Italian specialty coffee to the airport, combining professional, consistent preparation with convenient service for departing and connecting travellers.",
+        "taglineSub": "Consistent quality, served fast",
+        "intro": "Segafredo Caffe brings Italian specialty coffee into the airport, with consistent preparation and quick service for travelers who are departing or connecting.",
         "locations": [
           "Shanghai Pudong Int'l Airport (S2 Satellite)"
         ]
       },
       "wangshifu": {
         "name": "Wong Shifu",
-        "slogan": "Hunan stir-fries with authentic wok flavour",
-        "tags": ["Hunan Cuisine", "Wok-Fried"],
-        "taglineMain": "Fresh Hunan flavours from the wok",
-        "taglineSub": "Authentic flavour, efficient service",
-        "intro": "Wong Shifu centres on Hunan flavours and freshly wok-fried dishes, balancing authentic wok character with efficient airport service for a convenient hot Chinese meal.",
+        "slogan": "Hunan stir-fries with real wok flavor",
+        "tags": ["Hunan cuisine", "Wok-fried"],
+        "taglineMain": "Hunan cooking, straight from the wok",
+        "taglineSub": "Authentic flavor, fast service",
+        "intro": "Wong Shifu is built around Hunan cooking and dishes fired fresh in the wok, balancing real wok flavor with the speed an airport requires — a proper hot Chinese meal that still fits the schedule.",
         "locations": [
           "Beijing Daxing Int'l Airport"
         ]
@@ -314,70 +325,74 @@
     }
   },
   "awards": {
-    "bannerTitle": "Awards & Recognition",
-    "bannerDesc": "Our awards celebrate the passion of our team, the trust of our partners, and our commitment to excellence. Each accolade strengthens our resolve to elevate travel experiences.",
+    "bannerTitle": "Awards and Recognition",
+    "bannerDesc": "These awards reflect the work of our teams and the trust of our partners. We read them as a measure of where we are, not a reason to stop.",
     "items": [
-      { "title": "Member Unit of Shanghai Transportation Trade Association" },
-      { "title": "2025 Beijing Capital Airport Operational Breakthrough & Innovation Award" },
-      { "title": "2025 Shanghai Annual High-Quality Development Contribution Award" },
-      { "title": "2025 Beijing Capital Airport Operational Trailblazing & Innovation Award" },
-      { "title": "2024 Beijing Capital Airport Service Reputation Acclaim Award" },
+      { "title": "Member, Shanghai Transportation Trade Association" },
+      { "title": "2025 Beijing Capital Airport Operational Breakthrough and Innovation Award" },
+      { "title": "2025 Shanghai Contribution to High-Quality Development Award" },
+      { "title": "2025 Beijing Capital Airport Business Pioneering and Innovation Award" },
+      { "title": "2024 Beijing Capital Airport Outstanding Service Reputation Award" },
       { "title": "2024 Guizhou Airport Integrity Store" },
-      { "title": "2024 Daxing Airport Dedicated Catering Professional" }
+      { "title": "2024 Daxing Airport Dedicated Catering Team" }
     ]
   },
   "news": {
     "hero": {
-      "title": "News & Articles"
+      "title": "News"
     },
-    "readMore": "Read more",
+    "readMore": "Read the article",
     "items": {
       "n20260113": {
-        "title": "Terminal Triggers a \"Pop-up Trend\" as Capital Airport Customs Boosts New Business Formats",
+        "title": "Pop-ups take hold in the terminal as Beijing Capital Airport customs backs new formats",
         "dateLabel": "Jan 13, 2026"
       },
+      "n20231002": {
+        "title": "First Segafredo Caffè in China opens at Shanghai Pudong International Airport",
+        "dateLabel": "Oct 2, 2023"
+      },
       "n20200114": {
-        "title": "Four F&B Brands Make a Surprise Debut in the Public Area of Capital Airport T3",
+        "title": "Four dining brands open in the public area of Beijing Capital Airport T3",
         "dateLabel": "Jan 14, 2020"
       }
     }
   },
   "contact": {
     "bannerTitle": "Contact Us",
-    "bannerDesc": "We welcome partnerships with those who share our vision. If you are interested in exploring opportunities for growth and innovation together, our team is always ready to connect.",
+    "bannerDesc": "We are always open to conversations with partners who see the same opportunity in travel dining that we do. Reach the right team directly below.",
     "b2b": {
-      "titleLead": "B2B ",
-      "titleHighlight": "Collaborations",
-      "desc": "We welcome partnerships that align with our mission to transform travel dining. If you're a business interested in collaborating with TGU, we are always open to explore opportunities.",
+      "titleLead": "Business ",
+      "titleHighlight": "Partnerships",
+      "desc": "If you are a brand, an airport or a supplier looking at travel dining, we would like to hear from you.",
       "departments": {
-        "item1": { "name": "Business Development", "email": "hanxl@tgu-asia.com" },
-        "item2": { "name": "Customer Service", "email": "vivian.ni@tgu-asia.com" },
-        "item3": { "name": "Media Queries", "email": "hanxl@tgu-asia.com" }
+        "item1": { "name": "Business Development", "email": "clara.ruan@tgu-asia.com" },
+        "item2": { "name": "Customer Service", "email": "admin@tgu-asia.com" },
+        "item3": { "name": "Media Inquiries", "email": "hanxl@tgu-asia.com" }
       },
       "office": {
-        "title": "Corporate Headquarters",
-        "address": "Room 1111, Building 8, Greenland Cloud Yuefang, 5600 Lane, Chuansha New Town, Pudong New Area, Shanghai",
-        "phone": "+86 137-9527-0948"
+        "title": "Headquarters",
+        "address": "Room 1111, Building 8, Greenland Cloud Yuefang, Lane 5600, Chuansha New Town, Pudong New Area, Shanghai, China",
+        "phone": "021-61096332"
       }
     },
     "connect": {
       "titleLead": "Connect ",
-      "titleHighlight": "with us",
-      "desc": "Your feedback is valuable in helping us enhance your travel experience. Whether you have a question, suggestion, or simply want to share your thoughts, we're here to listen.",
+      "titleHighlight": "With Us",
+      "desc": "Feedback from travelers is one of the more useful things we get. If you have a question, a suggestion or something we could have done better, we would like to hear it.",
       "form": {
         "fullName": "Full Name",
-        "phone": "Contact Number",
-        "email": "Email ID",
-        "message": "Inquiry",
-        "submit": "Send us a Message"
+        "phone": "Phone",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send message"
       }
     }
   },
   "footer": {
-    "copyright": "Travel Gourmet United © 2026. All Rights Reserved.",
+    "copyright": "Travel Gourmet United © 2026. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "icp": "ICP Placeholder",
-    "contact": "For Business Queries: hanxl@tgu-asia.com"
+    "contact": "Business inquiries: hanxl@tgu-asia.com"
   }
 }

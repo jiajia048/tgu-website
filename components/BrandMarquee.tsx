@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 import {
   BRANDS,
   MAIN_ORDER,
@@ -40,6 +41,7 @@ function fillUntil<T>(arr: T[], min: number): T[] {
 
 export default function BrandMarquee() {
   const { t } = useLanguage();
+  const typo = useTypography();
   const [active, setActive] = useState<MainCat>("chinese");
 
   const { row1, row2 } = useMemo(() => {
@@ -58,7 +60,9 @@ export default function BrandMarquee() {
       <MarqueeKeyframes />
       {/* Title */}
       <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--color-theme)] font-serif">
+        <h2
+          className={`mx-auto text-center text-[var(--color-theme)] ${typo.sectionTitleLg} ${typo.measureHeading}`}
+        >
           {t.home.marquee.title}
         </h2>
 
@@ -74,11 +78,11 @@ export default function BrandMarquee() {
                 aria-pressed={isActive}
                 className={`
                   group relative inline-flex items-center gap-2 pb-2
-                  text-sm md:text-base font-medium tracking-wide
+                  text-sm md:text-base font-medium ${typo.uiLabel}
                   transition-colors duration-300
                   ${isActive
                     ? "text-[var(--color-theme)]"
-                    : "text-[var(--color-body)] hover:text-[var(--color-theme)]"}
+                    : `${typo.bodyColor} hover:text-[var(--color-theme)]`}
                 `}
               >
                 <Icon className="w-4 h-4" strokeWidth={2} />

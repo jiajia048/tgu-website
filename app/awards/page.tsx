@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 
 /**
  * Award certificate images, in display order (filename prefix 0- … 6-).
@@ -35,6 +36,7 @@ const CARD_VARIANTS: Variants = {
 
 export default function AwardsPage() {
   const { t } = useLanguage();
+  const typo = useTypography();
   const { bannerTitle, bannerDesc, items } = t.awards;
 
   return (
@@ -42,7 +44,10 @@ export default function AwardsPage() {
       {/* ════════════════════════════════════════
           Banner — full-width image hero
       ════════════════════════════════════════ */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(220px, 36vw, 480px)" }}>
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: typo.heroHeight }}
+      >
         <Image
           src={img("/images/awards/bg.jpg")}
           alt={bannerTitle}
@@ -51,13 +56,13 @@ export default function AwardsPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={`absolute inset-0 ${typo.heroOverlay}`} />
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-16 md:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="font-serif text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl"
+            className={`mx-auto px-6 text-center ${typo.heroTitleColor} ${typo.heroTitle} ${typo.measureHeroHeading}`}
           >
             {bannerTitle}
           </motion.p>
@@ -65,7 +70,7 @@ export default function AwardsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
-            className="mt-3 max-w-2xl px-6 text-center text-sm leading-relaxed tracking-wide text-white/80 md:mt-4 md:text-base"
+            className={`mx-auto mt-3 max-w-2xl px-6 text-center md:mt-4 ${typo.heroLedeColor} ${typo.heroLede}`}
           >
             {bannerDesc}
           </motion.p>
@@ -88,11 +93,11 @@ export default function AwardsPage() {
               key={i}
               variants={CARD_VARIANTS}
               whileHover={{ y: -6, scale: 1.02, transition: { type: "spring", stiffness: 320, damping: 22 } }}
-              className="
+              className={`
                 group flex h-full flex-col overflow-hidden rounded-2xl
-                bg-[var(--color-surface)] p-5 md:p-6
+                ${typo.surfaceBg} p-5 md:p-6
                 shadow-sm ring-1 ring-black/5 hover:shadow-xl
-              "
+              `}
             >
               {/* Certificate — fixed 4:3 frame, identical across all cards */}
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-white">
@@ -106,7 +111,9 @@ export default function AwardsPage() {
               </div>
 
               {/* Title */}
-              <h3 className="mt-5 flex min-h-[3rem] items-start text-center text-sm font-bold leading-snug text-[var(--color-title)] md:text-base">
+              <h3
+                className={`mt-5 flex min-h-[3rem] items-start text-center text-sm font-bold leading-snug md:text-base ${typo.titleColor}`}
+              >
                 <span className="mx-auto">{item.title}</span>
               </h3>
             </motion.div>

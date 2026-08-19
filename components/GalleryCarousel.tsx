@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTypography } from "@/lib/typography";
 import { GALLERY_DATA } from "@/data/gallery";
 import GalleryThumbCard from "./GalleryThumbCard";
 
@@ -15,6 +16,7 @@ import GalleryThumbCard from "./GalleryThumbCard";
  */
 export default function GalleryCarousel() {
   const { t } = useLanguage();
+  const typo = useTypography();
   const router = useRouter();
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -28,14 +30,14 @@ export default function GalleryCarousel() {
   }
 
   return (
-    <section className="bg-[var(--color-surface)] py-20 md:py-28">
+    <section className={`py-20 md:py-28 ${typo.surfaceBg}`}>
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center font-serif text-2xl font-bold leading-snug tracking-tight text-[var(--color-title)] md:text-3xl lg:text-4xl"
+          className={`mx-auto text-center ${typo.titleColor} ${typo.sectionTitle} ${typo.measureHeading}`}
         >
           {t.home.cases.title}
         </motion.h2>

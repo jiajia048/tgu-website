@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 import type { GalleryBrand } from "@/data/gallery";
 
 /**
@@ -20,8 +21,11 @@ export default function GalleryThumbCard({
   onReadMore: () => void;
 }) {
   const { t, locale } = useLanguage();
+  const typo = useTypography();
   const info = t.gallery.brands[brand.id];
-  const sep = locale === "zh" ? "、" : " · ";
+  const isZh = locale === "zh";
+  const sep = isZh ? "、" : " · ";
+  const colon = isZh ? "：" : ": ";
 
   return (
     <motion.div
@@ -41,11 +45,11 @@ export default function GalleryThumbCard({
       </div>
 
       <div className="flex flex-1 flex-col gap-2.5 px-6 pt-5 pb-6">
-        <h3 className="font-serif text-lg font-bold leading-snug tracking-tight text-[var(--color-title)] md:text-xl">
+        <h3 className={`${typo.titleColor} ${typo.cardTitle}`}>
           {info.name}
         </h3>
 
-        <p className="text-xs leading-relaxed text-[var(--color-body)] line-clamp-1">
+        <p className={`text-xs leading-relaxed line-clamp-1 ${typo.bodyColor}`}>
           {info.slogan}
         </p>
 
@@ -53,16 +57,21 @@ export default function GalleryThumbCard({
           {info.tags.map((tag, i) => (
             <span
               key={i}
-              className="rounded-full border border-gray-200 px-2 py-0.5 text-[10px] tracking-wide text-[var(--color-body)]"
+              className={`rounded-full border border-gray-200 px-2 py-0.5 text-[10px] ${typo.bodyColor} ${typo.uiLabel}`}
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <p className="mt-3 border-t border-gray-100 pt-3 text-xs leading-relaxed text-[var(--color-body)]/70">
+        <p
+          className={`mt-3 border-t border-gray-100 pt-3 text-xs leading-relaxed ${
+            isZh ? "text-[var(--color-body)]/70" : typo.mutedColor
+          }`}
+        >
           <span className="font-medium text-[var(--color-theme)]">
-            {t.gallery.layoutLabel}：
+            {t.gallery.layoutLabel}
+            {colon}
           </span>
           {info.locations.join(sep)}
         </p>

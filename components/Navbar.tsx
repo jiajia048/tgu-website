@@ -216,12 +216,12 @@ export default function Navbar() {
               aria-label="TGU 首页"
             >
               <Image
-                src="/logos/tgu-logo.svg"
+                src="/logos/tgu-logo-full.svg"
                 alt="TGU Logo"
-                width={220}
-                height={64}
+                width={255}
+                height={105}
                 priority
-                className="h-full w-auto max-h-10 md:max-h-none object-contain object-left"
+                className="h-[2.55rem] w-auto object-contain object-left md:h-[5.95rem] origin-left"
               />
             </Link>
 
@@ -425,11 +425,11 @@ export default function Navbar() {
               {/* Panel header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/20">
                 <Image
-                  src="/logos/tgu-logo.svg"
+                  src="/logos/tgu-logo-full.svg"
                   alt="TGU Logo"
-                  width={90}
-                  height={30}
-                  className="h-7 w-auto object-contain"
+                  width={119}
+                  height={49}
+                  className="h-[1.9125rem] w-auto object-contain"
                 />
                 <button
                   onClick={() => setMobileOpen(false)}

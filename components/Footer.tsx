@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTypography } from "@/lib/typography";
 
 const LEFT_NAV = [
   { key: "home" as const, href: "/" },
@@ -21,9 +22,10 @@ const RIGHT_NAV = [
 
 export default function Footer() {
   const { t } = useLanguage();
+  const typo = useTypography();
 
   return (
-    <footer className="mt-auto bg-[var(--color-title)]">
+    <footer className={`mt-auto ${typo.inkBg}`}>
       {/* ── Upper: Nav + Logo ── */}
       <div className="mx-auto max-w-7xl px-6 md:px-8 py-10 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8 md:gap-6">
@@ -33,7 +35,7 @@ export default function Footer() {
               <li key={key}>
                 <Link
                   href={href}
-                  className="text-sm tracking-wide text-[var(--color-text-inverse)]/70 transition-colors duration-200 hover:text-[var(--color-highlight)]"
+                  className={`text-sm text-[var(--color-text-inverse)]/70 transition-colors duration-200 hover:text-[var(--color-highlight)] ${typo.uiLabel}`}
                 >
                   {t.nav[key]}
                 </Link>
@@ -62,7 +64,7 @@ export default function Footer() {
               <li key={key}>
                 <Link
                   href={href}
-                  className="text-sm tracking-wide text-[var(--color-text-inverse)]/70 transition-colors duration-200 hover:text-[var(--color-highlight)]"
+                  className={`text-sm text-[var(--color-text-inverse)]/70 transition-colors duration-200 hover:text-[var(--color-highlight)] ${typo.uiLabel}`}
                 >
                   {t.nav[key]}
                 </Link>
@@ -82,7 +84,9 @@ export default function Footer() {
         className="mx-auto max-w-7xl px-6 md:px-8 pt-6 pb-6"
         style={{ paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }}
       >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 text-xs tracking-wide text-[var(--color-text-inverse)]/50">
+        <div
+          className={`flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 text-[var(--color-text-inverse)]/50 ${typo.caption}`}
+        >
           {/* Left — copyright & legal */}
           <p className="text-center md:text-left flex flex-wrap justify-center md:justify-start items-center gap-x-2 gap-y-1">
             <span>{t.footer.copyright}</span>

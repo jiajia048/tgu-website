@@ -5,8 +5,9 @@ import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 
-type NewsKey = "n20260113" | "n20200114";
+type NewsKey = "n20260113" | "n20231002" | "n20200114";
 
 type NewsItem = {
   key: NewsKey;
@@ -26,6 +27,12 @@ const NEWS_DATA: NewsItem[] = [
     date: "2026-01-13",
     cover: "/images/news/20260113.jpg",
     href: "https://mp.weixin.qq.com/s/Hn11TyJc4bdo7vtzk4ggHQ",
+  },
+  {
+    key: "n20231002",
+    date: "2023-10-02",
+    cover: "/images/news/20231002.jpg",
+    href: "https://newsroom.mzb-services.com/en/announcing-the-first-segafredo-caffe-in-china-at-pudong-international-airport-shanghai/press-release",
   },
   {
     key: "n20200114",
@@ -60,12 +67,16 @@ const CARD_VARIANTS: Variants = {
 
 export default function NewsPage() {
   const { t } = useLanguage();
+  const typo = useTypography();
   const sorted = sortByDateDesc(NEWS_DATA);
 
   return (
     <main className="bg-[var(--color-background)]">
       {/* ── Banner ── */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(220px, 36vw, 480px)" }}>
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: typo.heroHeight }}
+      >
         <Image
           src={img("/images/news/bg.jpg")}
           alt={t.news.hero.title}
@@ -74,13 +85,13 @@ export default function NewsPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={`absolute inset-0 ${typo.heroOverlay}`} />
         <div className="absolute inset-0 flex items-center justify-center pt-16 md:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="font-serif text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl"
+            className={`mx-auto px-6 text-center ${typo.heroTitleColor} ${typo.heroTitle} ${typo.measureHeroHeading}`}
           >
             {t.news.hero.title}
           </motion.p>
@@ -105,12 +116,12 @@ export default function NewsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={CARD_VARIANTS}
-                className="
+                className={`
                   group flex flex-col overflow-hidden rounded-2xl
-                  bg-[var(--color-surface)]
+                  ${typo.surfaceBg}
                   shadow-sm hover:shadow-md
                   transition-shadow duration-300
-                "
+                `}
               >
                 {/* Cover */}
                 <div className="relative aspect-video overflow-hidden rounded-t-2xl">
@@ -125,21 +136,25 @@ export default function NewsPage() {
 
                 {/* Body */}
                 <div className="flex flex-1 flex-col p-5 md:p-6">
-                  <p className="text-xs tracking-wider uppercase text-[var(--color-body)]/80">
+                  <p
+                    className={`text-xs text-[var(--color-body)]/80 ${typo.metaLabel}`}
+                  >
                     {data.dateLabel}
                   </p>
-                  <h3 className="mt-2 text-lg font-bold leading-snug text-[var(--color-title)] line-clamp-2">
+                  <h3
+                    className={`mt-2 line-clamp-2 text-lg font-bold leading-snug ${typo.titleColor}`}
+                  >
                     {data.title}
                   </h3>
 
                   <div className="mt-auto pt-6">
                     <span
-                      className="
+                      className={`
                         inline-flex items-center gap-1.5 text-sm font-medium
-                        text-[var(--color-body)]
+                        ${typo.bodyColor}
                         transition-colors duration-200
                         group-hover:text-[var(--color-theme)]
-                      "
+                      `}
                     >
                       <span>{t.news.readMore}</span>
                       <ArrowRight

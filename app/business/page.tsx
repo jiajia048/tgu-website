@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 import {
   BRANDS,
   MAIN_ORDER,
@@ -80,27 +81,42 @@ const CARD_VAR: Variants = {
     Shared section heading
 ════════════════════════════════════════ */
 
+/**
+ * `editorial` centres the whole block as a narrower column and left-aligns the
+ * English copy inside it, so the section keeps balanced margins on both sides
+ * rather than hugging the left edge of the page grid. Chinese stays centred
+ * and full-width either way.
+ */
 function SectionHeading({
   title,
   subtitle,
   body,
+  editorial = false,
 }: {
   title: string;
   subtitle?: string;
   body?: string;
+  editorial?: boolean;
 }) {
+  const typo = useTypography();
+  const wrapper = editorial
+    ? `${typo.editorialMx} ${typo.measureContainer} ${typo.editorialAlign}`
+    : "text-center";
+  const headingMeasure = editorial ? "" : `mx-auto ${typo.measureHeading}`;
+  const ledeMeasure = editorial ? "" : `mx-auto ${typo.measureLede}`;
+
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       variants={STAGGER_PARENT}
-      className="text-center"
+      className={wrapper}
     >
       <motion.h2
         variants={FADE_UP}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="font-serif text-2xl font-bold leading-snug tracking-tight text-[var(--color-title)] md:text-3xl lg:text-4xl"
+        className={`${typo.titleColor} ${headingMeasure} ${typo.sectionTitle}`}
       >
         {title}
       </motion.h2>
@@ -108,7 +124,7 @@ function SectionHeading({
         <motion.p
           variants={FADE_UP}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mt-4 text-base font-medium tracking-wide text-[var(--color-theme)] md:mt-5 md:text-lg"
+          className={`mt-4 text-[var(--color-theme)] md:mt-5 ${ledeMeasure} ${typo.sectionLede}`}
         >
           {subtitle}
         </motion.p>
@@ -117,7 +133,7 @@ function SectionHeading({
         <motion.p
           variants={FADE_UP}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mx-auto mt-6 max-w-3xl text-sm leading-loose tracking-wide text-[var(--color-body)] md:mt-8 md:text-base md:leading-loose"
+          className={`mt-6 md:mt-8 ${ledeMeasure} ${typo.bodyColor} ${typo.body}`}
         >
           {body}
         </motion.p>
@@ -131,8 +147,10 @@ function SectionHeading({
 ════════════════════════════════════════ */
 
 export default function BusinessPage() {
-  const { t } = useLanguage();
-  const { overview, brands, airports } = t.business;
+  const { t, locale } = useLanguage();
+  const typo = useTypography();
+  const isEn = locale === "en";
+  const { bannerTitle, overview, brands, airports } = t.business;
 
   const [mainActive, setMainActive] = useState<MainCat>("chinese");
   const [subActive, setSubActive] = useState<SubKey | "all">("all");
@@ -159,7 +177,10 @@ export default function BusinessPage() {
       {/* ════════════════════════════════════════
           Banner — full-width image hero
       ════════════════════════════════════════ */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(220px, 36vw, 480px)" }}>
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: typo.heroHeight }}
+      >
         <Image
           src={img("/images/business/bg.jpg")}
           alt="途捷餐饮 公司业务"
@@ -168,21 +189,23 @@ export default function BusinessPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={`absolute inset-0 ${typo.heroOverlay}`} />
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-16 md:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="font-serif text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl"
+            className={`mx-auto px-6 text-center ${typo.heroTitleColor} ${typo.heroTitle} ${typo.measureHeroHeading}`}
           >
-            {overview.title}
+            {bannerTitle}
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
-            className="mt-3 max-w-xl px-6 text-center text-sm tracking-wide text-white/80 md:mt-4 md:text-base lg:text-lg"
+            className={`mx-auto mt-3 px-6 text-center md:mt-4 ${
+              isEn ? "max-w-[680px]" : "max-w-xl"
+            } ${typo.heroLedeColor} ${typo.heroLede}`}
           >
             {overview.bannerDesc}
           </motion.p>
@@ -198,17 +221,22 @@ export default function BusinessPage() {
       >
         <div className="mx-auto max-w-6xl px-6 md:px-8">
 
-          {/* Descriptive body paragraph */}
-          <motion.p
+          {/* Descriptive body paragraph — centred column, left-aligned copy */}
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-sm leading-loose tracking-wide text-[var(--color-body)] md:text-base md:leading-loose"
+            className={`${typo.editorialMx} ${typo.measureContainer} ${typo.editorialAlign}`}
           >
-            {overview.body}
-          </motion.p>
+            {isEn ? (
+              <p className={`mb-4 text-[var(--color-theme)] ${typo.kicker}`}>
+                {overview.title}
+              </p>
+            ) : null}
+            <p className={`${typo.bodyColor} ${typo.body}`}>{overview.body}</p>
+          </motion.div>
 
           {/* Three-way win-win bar: icon → coloured title → desc */}
           <motion.div
@@ -216,7 +244,7 @@ export default function BusinessPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={STAGGER_PARENT}
-            className="mt-14 grid grid-cols-1 divide-y divide-gray-100 overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/5 md:mt-20 md:grid-cols-3 md:divide-x md:divide-y-0"
+            className={`mt-14 grid grid-cols-1 divide-y overflow-hidden md:mt-20 md:grid-cols-3 md:divide-x md:divide-y-0 ${typo.panel} ${typo.panelDivide}`}
           >
             {overview.winwin.map((col, i) => {
               const Icon = WINWIN_ICONS[i];
@@ -228,13 +256,19 @@ export default function BusinessPage() {
                   className="flex flex-col items-center px-7 py-8 text-center md:px-8 md:py-10"
                 >
                   <Icon
-                    className="h-9 w-9 text-[var(--color-highlight)] md:h-10 md:w-10"
+                    className={`text-[var(--color-highlight)] ${
+                      isEn ? "h-8 w-8" : "h-9 w-9 md:h-10 md:w-10"
+                    }`}
                     strokeWidth={1.5}
                   />
-                  <p className="mt-4 font-serif text-base font-semibold tracking-widest text-[var(--color-theme)] md:text-lg">
+                  <p className={`mt-4 text-[var(--color-theme)] ${typo.labelTitle}`}>
                     {col.title}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed tracking-wide text-[var(--color-body)] md:text-base">
+                  <p
+                    className={`mt-3 ${typo.bodyColor} ${typo.bodySm} ${
+                      isEn ? "" : "md:text-base"
+                    }`}
+                  >
                     {col.desc}
                   </p>
                 </motion.div>
@@ -249,7 +283,7 @@ export default function BusinessPage() {
       ════════════════════════════════════════ */}
       <section
         id="brands"
-        className="scroll-mt-20 bg-[var(--color-surface)] py-20 md:scroll-mt-28 md:py-32"
+        className={`scroll-mt-20 py-20 md:scroll-mt-28 md:py-32 ${typo.surfaceBg}`}
       >
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <SectionHeading title={brands.title} subtitle={brands.subtitle} />
@@ -272,11 +306,11 @@ export default function BusinessPage() {
                   aria-pressed={isActive}
                   className={`
                     inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full
-                    text-sm md:text-base font-medium tracking-wide
+                    text-sm md:text-base font-medium ${typo.uiLabel}
                     transition-all duration-300 ease-out
                     ${isActive
                       ? "bg-[var(--color-theme)] text-white shadow-md shadow-[var(--color-theme)]/20"
-                      : "bg-white text-[var(--color-body)] hover:bg-[var(--color-theme)]/10 hover:text-[var(--color-theme)]"}
+                      : `bg-white ${typo.bodyColor} hover:bg-[var(--color-theme)]/10 hover:text-[var(--color-theme)]`}
                   `}
                 >
                   <Icon className="w-4 h-4" strokeWidth={2} />
@@ -310,11 +344,11 @@ export default function BusinessPage() {
                       aria-pressed={isActive}
                       className={`
                         px-3.5 py-1.5 rounded-full
-                        text-xs md:text-sm font-medium tracking-wide
+                        text-xs md:text-sm font-medium ${typo.uiLabel}
                         transition-all duration-300 ease-out
                         ${isActive
                           ? "bg-[var(--color-theme)] text-white"
-                          : "bg-white text-[var(--color-body)] hover:bg-[var(--color-theme)]/10 hover:text-[var(--color-theme)]"}
+                          : `bg-white ${typo.bodyColor} hover:bg-[var(--color-theme)]/10 hover:text-[var(--color-theme)]`}
                       `}
                     >
                       {label}
@@ -377,6 +411,7 @@ export default function BusinessPage() {
             title={airports.title}
             subtitle={airports.subtitle}
             body={airports.body}
+            editorial
           />
 
           <motion.div
@@ -393,7 +428,9 @@ export default function BusinessPage() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 whileHover={{ y: -6, scale: 1.02, transition: { type: "spring", stiffness: 320, damping: 22 } }}
                 style={{ originX: 0.5, originY: 0.5 }}
-                className="group overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow duration-300 hover:shadow-xl"
+                className={`group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 transition-shadow duration-300 hover:shadow-xl ${
+                  isEn ? "ring-[var(--color-hairline-en)]" : "ring-black/5"
+                }`}
               >
                 {/* Photo: 16:9 crop, identical ratio across all cards */}
                 <div className="relative aspect-video w-full overflow-hidden">
@@ -404,38 +441,64 @@ export default function BusinessPage() {
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <span className="absolute top-4 left-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-medium tracking-wider text-[var(--color-theme)] uppercase backdrop-blur-sm">
+                  <span
+                    className={`absolute top-4 left-4 rounded-full bg-white/90 px-3 py-1 text-[11px] text-[var(--color-theme)] backdrop-blur-sm ${typo.metaLabel}`}
+                  >
                     {airports.badge}
                   </span>
                 </div>
 
                 <div className="p-6 md:p-8">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="font-serif text-xl font-bold text-[var(--color-title)] md:text-2xl">
+                    <h3 className={`${typo.titleColor} ${typo.cardTitleLg}`}>
                       {ap.name}
                     </h3>
-                    <span className="text-base font-bold tracking-wider text-[var(--color-theme)] md:text-lg">
+                    <span
+                      className={`text-base font-bold text-[var(--color-theme)] md:text-lg ${
+                        isEn ? "tracking-[0.06em]" : "tracking-wider"
+                      }`}
+                    >
                       {ap.code}
                     </span>
                   </div>
                   {ap.subname ? (
-                    <p className="mt-1.5 text-sm text-[var(--color-body)]/50">{ap.subname}</p>
+                    <p
+                      className={`mt-1.5 text-sm ${
+                        isEn ? typo.mutedColor : "text-[var(--color-body)]/50"
+                      }`}
+                    >
+                      {ap.subname}
+                    </p>
                   ) : null}
 
-                  <p className="mt-4 text-sm leading-relaxed text-[var(--color-body)] md:text-base">
+                  <p
+                    className={`mt-4 ${typo.bodyColor} ${typo.bodySm} ${
+                      isEn ? "" : "md:text-base"
+                    }`}
+                  >
                     {ap.desc}
                   </p>
 
-                  <div className="mt-6 grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-4 border-t border-gray-100 pt-5">
+                  <div
+                    className={`mt-6 grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-4 border-t pt-5 ${
+                      isEn ? "border-[var(--color-hairline-en)]" : "border-gray-100"
+                    }`}
+                  >
                     {[
                       { label: airports.labels.terminal, value: ap.terminal },
                       { label: airports.labels.brand, value: ap.brand },
                     ].map((d, idx) => (
                       <div key={idx}>
-                        <p className="text-[11px] tracking-wider text-[var(--color-body)]/40 uppercase">
+                        <p
+                          className={`text-[11px] ${
+                            isEn ? typo.mutedColor : "text-[var(--color-body)]/40"
+                          } ${typo.metaLabel}`}
+                        >
                           {d.label}
                         </p>
-                        <p className="mt-1 text-sm font-medium text-[var(--color-title)]">
+                        <p
+                          className={`mt-1 text-sm font-medium ${typo.titleColor}`}
+                        >
                           {d.value}
                         </p>
                       </div>
@@ -452,7 +515,7 @@ export default function BusinessPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={STAGGER_PARENT}
-            className="mt-8 rounded-2xl border border-dashed border-[var(--color-theme)]/30 bg-[var(--color-surface)] p-6 md:mt-10 md:p-8"
+            className={`mt-8 rounded-2xl border border-dashed border-[var(--color-theme)]/30 p-6 md:mt-10 md:p-8 ${typo.surfaceBg}`}
           >
             <motion.div
               variants={FADE_UP}
@@ -465,14 +528,20 @@ export default function BusinessPage() {
                     className="h-4 w-4 text-[var(--color-theme)]"
                     strokeWidth={1.8}
                   />
-                  <span className="text-[11px] font-medium tracking-wider text-[var(--color-theme)] uppercase">
+                  <span
+                    className={`text-[11px] text-[var(--color-theme)] ${typo.metaLabel}`}
+                  >
                     {airports.comingSoon.label}
                   </span>
                 </div>
-                <p className="mt-3 font-serif text-lg font-bold tracking-tight text-[var(--color-title)] md:text-xl">
+                <p className={`mt-3 ${typo.titleColor} ${typo.cardTitle}`}>
                   {airports.comingSoon.title}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-body)]/70">
+                <p
+                  className={`mt-2 ${typo.bodySm} ${
+                    isEn ? typo.mutedColor : "text-[var(--color-body)]/70"
+                  }`}
+                >
                   {airports.comingSoon.note}
                 </p>
               </div>
@@ -483,12 +552,14 @@ export default function BusinessPage() {
                     key={ap.code}
                     className="flex items-center gap-2.5 rounded-full bg-white px-4 py-2.5 ring-1 ring-black/5"
                   >
-                    <span className="text-sm font-bold tracking-wider text-[var(--color-theme)]">
+                    <span
+                      className={`text-sm font-bold text-[var(--color-theme)] ${
+                        isEn ? "tracking-[0.06em]" : "tracking-wider"
+                      }`}
+                    >
                       {ap.code}
                     </span>
-                    <span className="text-sm text-[var(--color-title)]">
-                      {ap.name}
-                    </span>
+                    <span className={`text-sm ${typo.titleColor}`}>{ap.name}</span>
                   </li>
                 ))}
               </ul>

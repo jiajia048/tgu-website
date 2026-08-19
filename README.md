@@ -44,11 +44,24 @@ public/       静态资源（图片不纳入 Git，见下）
 
 ## 图片资源
 
-图片存放在 `public/images/`，随仓库一起部署，由站点同源提供（`/images/...`）。
+图片存放在阿里云 OSS，`public/images/` 只作为本地开发副本，已在 `.gitignore` 中排除。
 
-`lib/img.ts` 默认使用这些相对路径。若设置了 `NEXT_PUBLIC_OSS_BASE_URL`，则会改走阿里云 OSS。
+`lib/img.ts` 依据 `NEXT_PUBLIC_OSS_BASE_URL` 决定图片来源：设置了就走 OSS，未设置回退到本地 `public`。
 
-线上若要使用仓库内图片而不是 OSS，请在 Vercel 环境变量中删除 `NEXT_PUBLIC_OSS_BASE_URL`。
+`.env.local` 示例：
+
+```
+NEXT_PUBLIC_OSS_BASE_URL=https://tgu-website-images.oss-cn-shanghai.aliyuncs.com
+```
+
+同步本地图片到 OSS：
+
+```bash
+ossutil sync ./public/images oss://tgu-website-images/images/ --update
+```
+
+OSS 域名需要同时登记在 `next.config.ts` 的 `images.remotePatterns` 中，
+否则 `next/image` 会拒绝加载。
 
 ## 文案维护
 

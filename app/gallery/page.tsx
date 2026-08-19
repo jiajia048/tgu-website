@@ -6,6 +6,7 @@ import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { MapPin, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { img } from "@/lib/img";
+import { useTypography } from "@/lib/typography";
 import { GALLERY_DATA, type BrandId, type GalleryBrand } from "@/data/gallery";
 import GalleryThumbCard from "@/components/GalleryThumbCard";
 
@@ -40,6 +41,7 @@ const openParamStore = {
 
 export default function GalleryPage() {
   const { t } = useLanguage();
+  const typo = useTypography();
 
   const requested = useSyncExternalStore(
     openParamStore.subscribe,
@@ -62,7 +64,10 @@ export default function GalleryPage() {
   return (
     <main className="bg-[var(--color-background)]">
       {/* ── Banner ── */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(220px, 36vw, 480px)" }}>
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: typo.heroHeight }}
+      >
         <Image
           src={img("/images/gallery/bg.jpg")}
           alt={t.gallery.hero.title}
@@ -71,13 +76,13 @@ export default function GalleryPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className={`absolute inset-0 ${typo.heroOverlay}`} />
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-16 md:pt-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="font-serif text-3xl font-bold tracking-widest text-white md:text-4xl lg:text-5xl"
+            className={`mx-auto px-6 text-center ${typo.heroTitleColor} ${typo.heroTitle} ${typo.measureHeroHeading}`}
           >
             {t.gallery.hero.title}
           </motion.p>
@@ -85,7 +90,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
-            className="mt-3 max-w-2xl px-6 text-center text-sm leading-relaxed tracking-wide text-white/80 md:mt-4 md:text-base"
+            className={`mx-auto mt-3 max-w-2xl px-6 text-center md:mt-4 ${typo.heroLedeColor} ${typo.heroLede}`}
           >
             {t.gallery.hero.desc}
           </motion.p>
@@ -149,6 +154,7 @@ function GalleryCard({
   onClose: () => void;
 }) {
   const { t } = useLanguage();
+  const typo = useTypography();
   const info = t.gallery.brands[brand.id];
   const isLeft = index % 2 === 0; // left column expands right; right column expands left
 
@@ -267,14 +273,16 @@ function GalleryCard({
                 />
               </div>
 
-              <h3 className="mt-4 font-serif text-xl font-bold leading-snug tracking-tight text-[var(--color-theme)] md:text-2xl">
+              <h3 className={`mt-4 text-[var(--color-theme)] ${typo.cardTitleLg}`}>
                 {info.name}
               </h3>
-              <p className="mt-1.5 text-sm leading-snug text-[var(--color-body)]">
+              <p className={`mt-1.5 text-sm leading-snug ${typo.bodyColor}`}>
                 {info.taglineSub}
               </p>
 
-              <p className="mt-5 text-sm leading-relaxed tracking-wide text-[var(--color-body)]">
+              <p
+                className={`mt-5 ${typo.bodyColor} ${typo.bodySm} ${typo.measureSplit}`}
+              >
                 {info.intro}
               </p>
 
@@ -282,7 +290,7 @@ function GalleryCard({
                 {info.locations.map((loc, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2.5 text-sm text-[var(--color-body)]"
+                    className={`flex items-start gap-2.5 text-sm ${typo.bodyColor}`}
                   >
                     <MapPin
                       className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-theme)]"
