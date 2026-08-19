@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 import { useLanguage, type Locale } from "@/contexts/LanguageContext";
 
 const NAV_KEYS = [
-  { key: "home" as const, href: "/" },
   { key: "about" as const, href: "/about" },
   { key: "business" as const, href: "/business" },
   { key: "gallery" as const, href: "/gallery" },
@@ -212,8 +211,9 @@ export default function Navbar() {
             {/* Col 1 — Logo (left) — full-height, no padding */}
             <Link
               href="/"
+              onClick={handleTopLinkClick("/")}
               className="flex items-center justify-start h-full overflow-visible py-2 md:py-0"
-              aria-label="TGU 首页"
+              aria-label={t.nav.home}
             >
               <Image
                 src="/logos/tgu-logo-full.svg"
@@ -424,13 +424,22 @@ export default function Navbar() {
             >
               {/* Panel header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/20">
-                <Image
-                  src="/logos/tgu-logo-full.svg"
-                  alt="TGU Logo"
-                  width={119}
-                  height={49}
-                  className="h-[1.9125rem] w-auto object-contain"
-                />
+                <Link
+                  href="/"
+                  onClick={(e) => {
+                    handleTopLinkClick("/")(e);
+                    setMobileOpen(false);
+                  }}
+                  aria-label={t.nav.home}
+                >
+                  <Image
+                    src="/logos/tgu-logo-full.svg"
+                    alt="TGU Logo"
+                    width={119}
+                    height={49}
+                    className="h-[1.9125rem] w-auto object-contain"
+                  />
+                </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-[#7d0e0e] hover:bg-[#7d0e0e]/5 transition-colors"
