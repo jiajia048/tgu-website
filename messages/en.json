@@ -265,7 +265,7 @@
       "eggbomb": {
         "name": "EGG BOMB",
         "slogan": "Global ideas, Chinese flavors",
-        "tags": ["Hot food", "Fast service"],
+        "tags": ["Signature Sandwiches", "Fast service"],
         "taglineMain": "The terminal's first made-to-order hot sandwich",
         "taglineSub": "Portable, quick, and one of our strongest performers per square meter",
         "intro": "EGG BOMB works from a simple idea: global formats, Chinese flavors. It created the made-to-order hot sandwich category inside airport terminals, combining Asian tastes with international trends. Everything is built when it is ordered, which keeps the flavor consistent while cutting the wait down to something that fits a boarding schedule. A distinctive look and a tight operating model have made it one of the strongest performers per square meter in the terminals where it operates.",
@@ -278,7 +278,7 @@
       "canton8": {
         "name": "Canton 8",
         "slogan": "Michelin Cantonese, made for travel",
-        "tags": ["Michelin Cantonese", "Fine dining"],
+        "tags": ["Michelin Cantonese", "Dim Sum"],
         "taglineMain": "Michelin-starred Cantonese, now in the terminal",
         "taglineSub": "Classic Cantonese cooking, without the rush",
         "intro": "Canton 8 brings Michelin-starred Cantonese cooking into the terminal: careful sourcing, traditional technique and a room that does not feel like an airport. From classic roast meats to seasonal seafood, the kitchen holds the standards the brand is known for, which changes what a sit-down meal before a flight can be.",
@@ -291,7 +291,7 @@
       "googse": {
         "name": "Goose Island",
         "slogan": "Craft beer, born in Chicago",
-        "tags": ["Craft beer", "Pub"],
+        "tags": ["Craft beer", "Bistro"],
         "taglineMain": "Chicago craft beer, right at the gate",
         "taglineSub": "A relaxed pour before you fly",
         "intro": "Goose Island started in Chicago and is now one of the better-known craft breweries in the world. In the terminal it keeps the same unfussy pub feel, with a rotating list of core and limited releases alongside American bar food — a straightforward way to slow down before a flight.",
@@ -303,7 +303,7 @@
       "segafredo": {
         "name": "Segafredo Caffe",
         "slogan": "Specialty coffee from Italy",
-        "tags": ["Italian coffee", "Specialty coffee"],
+        "tags": ["Italian coffee", "Café"],
         "taglineMain": "Italian specialty coffee in the terminal",
         "taglineSub": "Consistent quality, served fast",
         "intro": "Segafredo Caffe brings Italian specialty coffee into the airport, with consistent preparation and quick service for travelers who are departing or connecting.",
