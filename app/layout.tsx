@@ -37,16 +37,17 @@ const notoSerifSC = Noto_Serif_SC({
 const SITE_URL = "https://tgu-website.vercel.app";
 const OG_TITLE = "About Us | TGU";
 const OG_DESCRIPTION = "A leading travel food & beverage operator in Asia.";
-const OG_IMAGE = "/logos/logo.png";
+const OG_IMAGE = "/logos/og-preview.png";
+const SITE_ICON = "/logos/tgu-logo.svg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: OG_TITLE,
   description: OG_DESCRIPTION,
   icons: {
-    icon: [{ url: OG_IMAGE, type: "image/png" }],
-    shortcut: OG_IMAGE,
-    apple: [{ url: OG_IMAGE, type: "image/png" }],
+    icon: [{ url: SITE_ICON, type: "image/svg+xml" }],
+    shortcut: SITE_ICON,
+    apple: [{ url: OG_IMAGE, type: "image/png", sizes: "512x512" }],
   },
   openGraph: {
     title: OG_TITLE,
@@ -58,15 +59,15 @@ export const metadata: Metadata = {
     images: [
       {
         url: OG_IMAGE,
-        width: 750,
-        height: 740,
+        width: 512,
+        height: 512,
         alt: "TGU",
         type: "image/png",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
     images: [OG_IMAGE],
