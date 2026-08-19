@@ -34,9 +34,43 @@ const notoSerifSC = Noto_Serif_SC({
   variable: "--font-noto-serif-sc",
 });
 
+const SITE_URL = "https://tgu-website.vercel.app";
+const OG_TITLE = "About Us | TGU";
+const OG_DESCRIPTION = "A leading travel food & beverage operator in Asia.";
+const OG_IMAGE = "/logos/logo.png";
+
 export const metadata: Metadata = {
-  title: "TGU",
-  description: "TGU Official Website",
+  metadataBase: new URL(SITE_URL),
+  title: OG_TITLE,
+  description: OG_DESCRIPTION,
+  icons: {
+    icon: [{ url: OG_IMAGE, type: "image/png" }],
+    shortcut: OG_IMAGE,
+    apple: [{ url: OG_IMAGE, type: "image/png" }],
+  },
+  openGraph: {
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    url: SITE_URL,
+    siteName: "TGU",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 750,
+        height: 740,
+        alt: "TGU",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export const viewport: Viewport = {
