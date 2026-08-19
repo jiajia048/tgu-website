@@ -221,14 +221,14 @@ export default function BusinessPage() {
       >
         <div className="mx-auto max-w-6xl px-6 md:px-8">
 
-          {/* Descriptive body paragraph — centred column, left-aligned copy */}
+          {/* Descriptive body — same width as the win-win bar below */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={FADE_UP}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className={`${typo.editorialMx} ${typo.measureContainer} ${typo.editorialAlign}`}
+            className={isEn ? typo.editorialAlign : "text-center"}
           >
             {isEn ? (
               <p className={`mb-4 text-[var(--color-theme)] ${typo.kicker}`}>
