@@ -38,7 +38,7 @@ export default function GalleryThumbCard({
           src={img(brand.storeImage)}
           alt={info.name}
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/10" />
