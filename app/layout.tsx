@@ -38,7 +38,7 @@ const SITE_URL = "https://tgu-website.vercel.app";
 const OG_TITLE = "About Us | TGU";
 const OG_DESCRIPTION = "A leading travel food & beverage operator in Asia.";
 const OG_IMAGE = "/logos/og-preview.png";
-const SITE_ICON = "/logos/tgu-logo.svg";
+const SITE_ICON = "/logos/logo.svg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
