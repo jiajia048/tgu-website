@@ -111,7 +111,7 @@
   },
   "careers": {
     "bannerTitle": "Join Us",
-    "bannerDesc": "The standards we set for travelers are the standards we set for ourselves. If you want to build and run airport dining alongside people who take the work seriously, we would like to hear from you.",
+    "bannerDesc": "Join our team and help us build and operate great travel dining experiences.",
     "hero": {
       "title": "Join Us",
       "desc": "The standards we set for travelers are the standards we set for ourselves. If you want to build and run airport dining alongside people who take the work seriously, we would like to hear from you."
@@ -149,7 +149,7 @@
     },
     "overview": {
       "title": "What we do",
-      "bannerDesc": "We replace one-size-fits-all airport dining with a portfolio built terminal by terminal, so travelers get genuine choice on every trip.",
+      "bannerDesc": "We build and operate a diverse portfolio of food and beverage brands, tailored to each travel location.",
       "body": "TGU runs food and beverage operations in airports and travel hubs. Traditional airport dining tends to work the other way around: sites are taken as they come, and the same handful of brands turns up in every terminal. We start from the terminal instead. We look at who travels through it and when, build a brand mix to match, and then operate those sites ourselves. Curating, composing and operating as one process is what makes the model work for travelers, brand partners and airports at the same time.",
       "winwin": [
         { "title": "For travelers", "desc": "More choice and more authentic food on every trip." },
@@ -259,7 +259,7 @@
     "readMore": "Read more",
     "hero": {
       "title": "Our Brands Gallery",
-      "desc": "A closer look at the spaces we build and the brands we run. Each store has its own character, and each one is designed for the way people actually use a terminal."
+      "desc": "Explore the spaces we build and the brands we run. Each store has its own character, designed around the traveler."
     },
     "brands": {
       "eggbomb": {
@@ -326,7 +326,7 @@
   },
   "awards": {
     "bannerTitle": "Awards and Recognition",
-    "bannerDesc": "These awards reflect the work of our teams and the trust of our partners. We read them as a measure of where we are, not a reason to stop.",
+    "bannerDesc": "Selected awards and recognition across our businesses.",
     "items": [
       { "title": "Member, Shanghai Transportation Trade Association" },
       { "title": "2025 Beijing Capital Airport Operational Breakthrough and Innovation Award" },
@@ -359,7 +359,7 @@
   },
   "contact": {
     "bannerTitle": "Contact Us",
-    "bannerDesc": "We are always open to conversations with partners who see the same opportunity in travel dining that we do. Reach the right team directly below.",
+    "bannerDesc": "For partnership and business enquiries, please contact the relevant team below.",
     "b2b": {
       "titleLead": "Business ",
       "titleHighlight": "Partnerships",
@@ -378,7 +378,7 @@
     "connect": {
       "titleLead": "Connect ",
       "titleHighlight": "With Us",
-      "desc": "Feedback from travelers is one of the more useful things we get. If you have a question, a suggestion or something we could have done better, we would like to hear it.",
+      "desc": "Feedback from travelers is one of the most useful things we get. If you have a question, a suggestion or something we could have done better, we would like to hear it.",
       "form": {
         "fullName": "Full Name",
         "phone": "Phone",
