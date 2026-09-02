@@ -105,7 +105,7 @@
         { "number": "$3B+", "desc": "Annual revenue worldwide" },
         { "number": "80M+", "desc": "Customers served annually" },
         { "number": "~3000", "desc": "Restaurant location worldwide" },
-        { "number": "50K+", "desc": "Square meters operated" }
+        { "number": "500K+", "desc": "Square meters operated" }
       ]
     }
   },
